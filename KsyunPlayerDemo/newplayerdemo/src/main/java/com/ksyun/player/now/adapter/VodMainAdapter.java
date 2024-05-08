@@ -1,14 +1,16 @@
 package com.ksyun.player.now.adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Handler;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.ksyun.player.now.R;
@@ -50,7 +52,7 @@ public class VodMainAdapter extends RecyclerView.Adapter<VodMainAdapter.VodMainH
     }
 
     @Override
-    public void onBindViewHolder(VodMainHolder holder, final int position) {
+    public void onBindViewHolder(VodMainHolder holder, @SuppressLint("RecyclerView") final int position) {
         holder.textView.setText(videoList.get(position).getVideoTitle());
         Glide.with(context)
                 .load(videoList.get(position).getCoverURL().get(0))

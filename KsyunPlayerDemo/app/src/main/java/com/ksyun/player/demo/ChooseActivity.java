@@ -5,12 +5,13 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.github.mzule.activityrouter.router.Routers;
 import com.ksyun.player.now.utils.Setting;
@@ -52,6 +53,7 @@ public class ChooseActivity extends AppCompatActivity implements View.OnClickLis
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == OVERLAY_PERMISSION_RESULT_CODE) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
                 if (!Settings.canDrawOverlays(this))
@@ -61,18 +63,13 @@ public class ChooseActivity extends AppCompatActivity implements View.OnClickLis
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()){
-            case R.id.to_old_version:
-                Routers.open(ChooseActivity.this, "oldVersionMain://oldMain");
-                break;
-            case R.id.vod:
-                Routers.open(ChooseActivity.this, "vod://vodMain");
-                break;
-            case R.id.live:
-                Routers.open(ChooseActivity.this, "live://liveMain");
-                break;
-            default:
-                break;
+        if (view.getId() == R.id.to_old_version) {
+            Routers.open(ChooseActivity.this, "oldVersionMain://oldMain");
+        } else if (view.getId() == R.id.vod) {
+            Routers.open(ChooseActivity.this, "vod://vodMain");
+        } else if (view.getId() == R.id.live) {
+            Routers.open(ChooseActivity.this, "live://liveMain");
+
         }
     }
 }

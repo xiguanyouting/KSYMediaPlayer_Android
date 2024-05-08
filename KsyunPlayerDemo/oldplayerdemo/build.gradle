@@ -1,12 +1,12 @@
 apply plugin: 'com.android.library'
-apply plugin: 'android-apt'
 android {
-    compileSdkVersion 25
-    buildToolsVersion '25.0.0'
+    namespace "com.ksyun.player.old"
+    compileSdkVersion 33
+    buildToolsVersion '33.0.0'
 
     defaultConfig {
-        minSdkVersion 16
-        targetSdkVersion 22
+        minSdkVersion 21
+        targetSdkVersion 33
         versionCode 203
         versionName "2.0.3"
         ndk {
@@ -34,12 +34,12 @@ repositories {
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile files('src/main/libs/zxing.jar')
-    testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:25.3.1'
-    compile 'com.android.support:design:25.3.1'
-    compile project(':playerlib')
-    compile 'com.github.mzule.activityrouter:activityrouter:1.2.2'
-    apt 'com.github.mzule.activityrouter:compiler:1.1.7'
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.9.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    api files('src/main/libs/zxing.jar')
+    api project(':playerlib')
+    api 'com.github.mzule.activityrouter:activityrouter:1.2.2'
+//    apt 'com.github.mzule.activityrouter:compiler:1.1.7'
 }

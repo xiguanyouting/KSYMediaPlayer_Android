@@ -6,7 +6,7 @@ import android.content.pm.ActivityInfo;
 import android.graphics.SurfaceTexture;
 import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.view.Surface;
 import android.view.TextureView;
 import android.widget.Toast;

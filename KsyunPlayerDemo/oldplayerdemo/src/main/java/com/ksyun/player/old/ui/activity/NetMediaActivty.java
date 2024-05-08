@@ -1,12 +1,11 @@
 package com.ksyun.player.old.ui.activity;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.os.Bundle;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
@@ -16,6 +15,9 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.ksyun.player.old.R;
 import com.ksyun.player.old.model.NetDbAdapter;
@@ -129,6 +131,7 @@ public class NetMediaActivty extends AppCompatActivity implements View.OnClickLi
 
     }
 
+    @SuppressLint("Range")
     @Override
     public void onClick(View view) {
             int id=view.getId();

@@ -15,7 +15,8 @@
         <activity
             android:name=".activity.LiveMainActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/NoTitle">
+            android:theme="@style/NoTitle"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
@@ -29,7 +30,8 @@
             android:name=".activity.VodMainActivity"
             android:hardwareAccelerated="true"
             android:screenOrientation="portrait"
-            android:theme="@style/NoTitle">
+            android:theme="@style/NoTitle"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
